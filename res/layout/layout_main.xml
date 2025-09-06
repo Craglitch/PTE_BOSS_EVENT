@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#f0f2f5"
+    android:padding="16dp">
+
+    <!-- Top: App Name + Day Tracker -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingBottom="12dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="LumePath"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:textColor="#1f2937" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/todayDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Friday, 5 Sep"
+                android:textSize="14sp"
+                android:textColor="#6b7280"/>
+        </LinearLayout>
+
+        <!-- Day Tracker Progress -->
+        <ProgressBar
+            android:id="@+id/dayProgress"
+            style="@android:style/Widget.ProgressBar.Horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:progress="40"
+            android:max="100"
+            android:progressTint="#4f46e5"
+            android:backgroundTint="#d1d5db"
+            android:layout_marginBottom="16dp"/>
+        
+        <!-- Search Bar -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:orientation="horizontal"
+            android:background="#ffffff"
+            android:padding="8dp"
+            android:gravity="center_vertical"
+            android:elevation="4dp"
+            android:layout_marginBottom="16dp"
+            android:clipToPadding="false"
+            android:clipChildren="false"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp">
+
+            <View
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:background="#cccccc"/>
+
+            <EditText
+                android:id="@+id/searchInput"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="Search tasks…"
+                android:background="@null"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"/>
+
+            <View
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:background="#cccccc"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Scrollable Tasks -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Task Card 1 -->
+            <LinearLayout
+                android:id="@+id/task1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp"
+                android:background="#ffffff"
+                android:elevation="4dp"
+                android:layout_marginBottom="16dp"
+                android:clickable="true"
+                android:focusable="true">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Morning Routine"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:textColor="#1f2937"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="6:00 AM - 7:30 AM"
+                    android:textSize="14sp"
+                    android:textColor="#6b7280"
+                    android:layout_marginTop="4dp"/>
+            </LinearLayout>
+
+            <!-- Task Card 2 -->
+            <LinearLayout
+                android:id="@+id/task2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp"
+                android:background="#ffffff"
+                android:elevation="4dp"
+                android:layout_marginBottom="16dp"
+                android:clickable="true"
+                android:focusable="true">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Work Focus"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:textColor="#1f2937"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="9:00 AM - 12:00 PM"
+                    android:textSize="14sp"
+                    android:textColor="#6b7280"
+                    android:layout_marginTop="4dp"/>
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Bottom Navigation -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal"
+        android:background="#ffffff"
+        android:padding="8dp"
+        android:gravity="center"
+        android:elevation="8dp">
+
+        <Button
+            android:id="@+id/navHome"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Home"/>
+
+        <Button
+            android:id="@+id/navSearch"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Search"/>
+
+        <Button
+            android:id="@+id/navAdd"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Add"/>
+
+        <Button
+            android:id="@+id/navSettings"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Settings"/>
+    </LinearLayout>
+
+</LinearLayout>
